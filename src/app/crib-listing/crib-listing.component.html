@@ -1,1 +1,13 @@
-<pre> {{ cribsData | json }} </pre>
+<div class="cardCarousel">
+	<div class="card" *ngFor="let crib of cribsData; let i = index">
+		<app-top-image *ngIf="i%2 == 0" [cardData]="crib"></app-top-image>
+		<app-bottom-image *ngIf="i%2 == 1" [cardData]="crib"></app-bottom-image>
+	</div>
+</div>
+
+<ng-template #oddCard>
+	<app-top-image [cardData]="crib"></app-top-image>
+</ng-template>
+<ng-template #evenCard>
+	<app-bottom-image [cardData]="crib"></app-bottom-image>
+</ng-template>
