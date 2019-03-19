@@ -1,0 +1,6 @@
+.details-badges>span{
+	margin-left:2px;
+}
+.details-badges:first-child {
+	margin-left: 0px;
+}

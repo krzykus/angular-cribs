@@ -1,6 +1,50 @@
 <div class="card-body">
-	<h5 class="card-title">{{cardData.address}}</h5>
-	<h6 class="card-subtitle mb-2 text-muted">
-		<span class="badge badge-pill badge-primary">{{cardData.type}}</span>
-	</h6>
-	<p class="card-text">{{cardData.price | currency:'GBP':true}}</p> </div>
+  <div *ngIf="!cardData.showDetails">
+    <h5 class="card-title">
+      <i class="glyphicon glyphicon-home"></i>
+      {{cardData.address}}
+    </h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+      <span class="badge badge-pill badge-primary">
+        {{cardData.type}}
+      </span>
+    </h6>
+    <p class="card-text">
+      <i class="glyphicon glyphicon-tag"></i>
+      {{cardData.price | currency:'GBP':'symbol'}}
+    </p>
+    <hr />
+    <button
+      class="btn btn-sm btn-success"
+      *ngIf="!cardData.showDetails"
+      (click)="cardData.showDetails = !cardData.showDetails">
+      Details
+    </button>
+  </div>
+  <div *ngIf="cardData.showDetails">
+    <div class="details">
+        <h6 class="details-badges">
+          <span class="badge badge-primary">
+            Beds: {{ cardData.bedrooms }}
+          </span>
+          <span class="badge badge-primary">
+            Baths: {{ cardData.bathrooms }}
+          </span>
+          <span class="badge badge-primary">
+            SqFt: {{ cardData.area }}
+          </span>
+        </h6>
+
+        <p>{{ cardData.description }}</p>
+
+        <hr>
+
+        <button
+          class="btn btn-sm btn-danger"
+          (click)="cardData.showDetails = !cardData.showDetails">
+          Close
+        </button>
+
+      </div>
+  </div>
+</div>

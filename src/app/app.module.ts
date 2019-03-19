@@ -7,6 +7,7 @@ import { CribListingComponent } from './crib-listing/crib-listing.component';
 import { TopImageComponent } from './card/top-image/top-image.component';
 import { BottomImageComponent } from './card/bottom-image/bottom-image.component';
 import { InfoComponent } from './card/info/info.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,10 +15,11 @@ import { InfoComponent } from './card/info/info.component';
     CribListingComponent,
     TopImageComponent,
     BottomImageComponent,
-    InfoComponent
+    InfoComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

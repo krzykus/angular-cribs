@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Crib } from './../../crib';
 
 @Component({
   selector: 'app-bottom-image',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./bottom-image.component.css']
 })
 export class BottomImageComponent implements OnInit {
-  @Input() cardData;
+  @Input() cardData: Crib;
   constructor() { }
 
   ngOnInit() {
